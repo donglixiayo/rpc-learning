@@ -1,0 +1,8 @@
+# 所有文本文件使用 LF
+* text=auto
+
+# 强制 pom.xml 使用 LF
+pom.xml text eol=lf
+
+# Windows 下某些文件使用 CRLF
+*.bat text eol=crlf
