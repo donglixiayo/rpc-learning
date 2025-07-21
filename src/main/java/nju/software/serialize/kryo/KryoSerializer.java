@@ -23,10 +23,7 @@ public class KryoSerializer implements Serializer {
         System.out.println(msg.getContent());
     }
 
-    private final ThreadLocal<Kryo> kryoThreadLocal = ThreadLocal.withInitial(() -> {
-        Kryo kryo = new Kryo();
-        return kryo;
-    });
+    private final ThreadLocal<Kryo> kryoThreadLocal = ThreadLocal.withInitial(Kryo::new);
 
     @Override
     public byte[] serialize(Object obj) {
